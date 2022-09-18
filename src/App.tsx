@@ -20,6 +20,8 @@ import {
 import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
 
 import { createTheme, ThemeProvider } from "@material-ui/core";
+import Header from "./design/components/header";
+import Websiterender from "./design";
 
 const theme = createTheme({
   palette: {
@@ -72,7 +74,7 @@ const App = () => {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletDialogProvider>
-            <Home
+            <Websiterender
               candyMachineId={candyMachineId}
               connection={connection}
               txTimeout={DEFAULT_TIMEOUT}

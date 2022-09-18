@@ -5,6 +5,7 @@ import { CircularProgress } from "@material-ui/core";
 import { GatewayStatus, useGateway } from "@civic/solana-gateway-react";
 import { useEffect, useState, useRef } from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import holders from "./utils/positiveYorkipooholders.json";
 import {
   findGatewayToken,
   getGatewayTokenAddressForOwnerAndGatekeeperNetwork,
@@ -110,7 +111,14 @@ export const MintButton = ({
     <CTAButton
       disabled={isMinting || !isActive}
       onClick={async () => {
-        if (candyMachine?.state.isActive && candyMachine?.state.gatekeeper) {
+        const elegible = holders.filter(
+          (v) => v.owner === wallet.publicKey?.toBase58()
+        );
+        if (
+          candyMachine?.state.isActive &&
+          candyMachine?.state.gatekeeper &&
+          elegible.length > 0
+        ) {
           const network =
             candyMachine.state.gatekeeper.gatekeeperNetwork.toBase58();
           if (network === CIVIC_GATEKEEPER_NETWORK) {

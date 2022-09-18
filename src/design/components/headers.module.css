@@ -1,0 +1,13 @@
+.header {
+  height: 10vh;
+  width: 100vw;
+  /* background-color: aliceblue; */
+  text-align: center;
+  color: aliceblue;
+  font-size: larger;
+  font-weight: 800;
+}
+
+.header:hover {
+  color: gold;
+}

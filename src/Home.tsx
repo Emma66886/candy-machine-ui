@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as anchor from "@project-serum/anchor";
-
+// import holders from "./utils/positiveYorkipooholders.json";
 import styled from "styled-components";
 import { Container, Snackbar } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
@@ -639,14 +639,14 @@ const Home = (props: HomeProps) => {
               </MintContainer>
             </>
           )}
-          <Typography
+          {/* <Typography
             variant="caption"
             align="center"
             display="block"
             style={{ marginTop: 7, color: "grey" }}
           >
             Powered by METAPLEX
-          </Typography>
+          </Typography> */}
         </Paper>
       </Container>
 
